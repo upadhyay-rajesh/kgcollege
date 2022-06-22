@@ -1,0 +1,31 @@
+Hello Angular I am from KG College.
+
+
+<form>
+	
+		Name : <input type="text" id="nm" #nm  ><br>
+		Password : <input type="password" id="pass"  #pass><br>
+		Email : <input type="email"   id="em"  #em><br>
+		Address : <input type="text" id="ad"  #ad><br>
+		<input type="button" value="register"  id="b"  (click)="registerUser(nm.value,pass.value,em.value,ad.value)">
+		
+	
+	</form>
+	
+
+	<app-register></app-register>
+	
+	{{password}}  <br>
+	{{a}}         <br>
+	{{title}}
+
+	<table border="5">
+		<tr><th></th><th>Name</th><th>Email</th><th>Address</th></tr>
+		<tr *ngFor="let item of mydata; let i = index">
+			<td>{{i + 1}}</td>
+			<td>{{item.name | uppercase}}</td>
+			<td>{{item.email | lowercase}}</td>
+			<td>{{item.address}}</td>
+			<td><input type="button" value="delete" (click)="deleteRecord(item.email)"></td>
+		</tr>
+	  </table>
